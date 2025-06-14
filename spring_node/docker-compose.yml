@@ -1,0 +1,20 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: Olani
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chat_system
+    ports:
+      - "5332:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - db
+
+networks:
+  db:
+
+volumes:
+  db:
