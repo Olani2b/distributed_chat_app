@@ -61,7 +61,7 @@ websocket_handle({text, Message}, State) ->
                 end;
 
             {error, _Reason} ->
-                io:format("❌ Invalid or missing token~n"),
+                io:format("Invalid or missing token~n"),
                 {reply, {text, <<"Unauthorized: Invalid token">>}, State}
         end
     catch
